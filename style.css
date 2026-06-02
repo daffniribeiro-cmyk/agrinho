@@ -1,0 +1,188 @@
+:root {
+  --primary: #2e7d32;
+  --primary-light: #4caf50;
+  --accent: #00e5ff;
+  --dark: #1b1f1c;
+  --light: #f1f8e9;
+  --danger: #d32f2f;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: var(--dark);
+  color: var(--light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+#game-container {
+  max-width: 600px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 5px;
+  color: var(--primary-light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #a5d6a7;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+}
+
+.score-card {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 8px;
+  min-width: 120px;
+  border-bottom: 3px solid var(--primary-light);
+}
+
+.score-card .label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #81c784;
+}
+
+.score-card .value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: block;
+  margin: 5px 0;
+}
+
+.score-card .unit {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+/* Barra de Preservação */
+.env-container {
+  margin-bottom: 30px;
+}
+
+.env-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.progress-bar {
+  background-color: #333;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#env-bar {
+  height: 100%;
+  background-color: var(--primary-light);
+  transition: width 0.3s, background-color 0.5s;
+}
+
+/* Botões */
+.main-btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+  transition: transform 0.1s, box-shadow 0.2s;
+  margin-bottom: 30px;
+}
+
+.main-btn:active {
+  transform: scale(0.95);
+}
+
+.main-btn:hover {
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.6);
+}
+
+/* Upgrades */
+.upgrades-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  text-align: left;
+}
+
+@media(min-width: 480px) {
+  .upgrades-grid { grid-template-columns: 1fr 1fr; }
+  .upgrade-card:last-child { grid-column: span 2; }
+}
+
+.upgrade-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.upgrade-card h4 {
+  margin: 0 0 5px 0;
+  color: var(--accent);
+}
+
+.upgrade-card p {
+  font-size: 0.8rem;
+  margin: 0 0 15px 0;
+  color: #ccc;
+  flex-grow: 1;
+}
+
+.buy-btn {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.buy-btn:hover:not(:disabled) {
+  background: var(--primary-light);
+}
+
+.buy-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#message-box {
+  margin-top: 20px;
+  min-height: 24px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.danger-text { color: var(--danger); }
+.success-text { color: var(--primary-light); }
